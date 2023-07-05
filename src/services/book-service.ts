@@ -18,6 +18,7 @@ export async function getBook(id: number) {
 }
 
 export async function createBook(book: CreateBook) {
+  book.purchaseDate=new Date(book.purchaseDate)
   return await booksRepository.createBook(book);
 }
 
